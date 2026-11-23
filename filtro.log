@@ -24,3 +24,29 @@ Entrepreneur         230
 Business_Ideas       195
 empreendedorismo      18
 Name: count, dtype: int64
+Entrepreneur.jsonl: lidos +59800 novos posts brutos (offset: 300,805,680 bytes)
+======================================================================
+[LOG DE FILTRAGEM - CRITÉRIOS E KEYWORDS APLICADOS]
+1. Escopo textual      : Concatenação de 'title' + 'selftext' (normalizados sem quebras de linha)
+2. Limpeza estrutural  : Exclusão de selftext vazio, '[removed]', '[deleted]', author == 'AutoModerator' e len(texto) < 300 chars
+3. Lógica booleana     : (Corresponde a >= 1 termo LLM) AND (Corresponde a >= 1 termo BIZ)
+4. Regex LLM (case-ins., exceto 'AI' estrito):
+   Padrão : chat\s?gpt|\bgpt|openai|claude|gemini|copilot|\bllm|(?-i:\bAI\b)
+   Termos : chat\s?gpt, \bgpt, openai, claude, gemini, copilot, \bllm, (?-i:\bAI\b)
+5. Regex BIZ (case-insensitive):
+   Padrão : business plan|startup|start-up|pricing|entrepreneur|my business|side hustle|go-to-market|market research|competitor|empreend|negócio
+   Termos : business plan, startup, start-up, pricing, entrepreneur, my business, side hustle, go-to-market, market research, competitor, empreend, negócio
+6. Funil desta rodada  : 59800 brutos -> 996 aprovados
+   Top matches LLM     : {'ai': 3403, 'chatgpt': 483, 'gpt': 451, 'openai': 172, 'llm': 86, 'chat gpt': 27, 'copilot': 10, 'claude': 10}
+   Top matches BIZ     : {'startup': 1101, 'entrepreneur': 835, 'competitor': 204, 'pricing': 182, 'my business': 125, 'side hustle': 58, 'market research': 48, 'business plan': 28}
+======================================================================
+
+Novos candidatos adicionados nesta rodada: 996
+Total acumulado em candidatos.csv: 3277
+subreddit
+startups            1272
+Entrepreneur        1226
+smallbusiness        566
+Business_Ideas       195
+empreendedorismo      18
+Name: count, dtype: int64

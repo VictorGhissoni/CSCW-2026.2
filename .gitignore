@@ -1,4 +1,5 @@
 *.csv
+!candidatos.csv
 *.parquet
 .venv/
 raw/Entrepreneur.jsonl

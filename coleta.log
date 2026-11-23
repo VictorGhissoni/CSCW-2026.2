@@ -2697,3 +2697,7 @@ Concluído r/startups: 57737 posts em 1535.2s (401 requests, média 1.74s/req).
   [HTTP 422 | 0.95s] {"data":null,"error":"Timeout. Maybe slow down a bit"} -> aguardando 2s (1/100)
   r/Entrepreneur | req #0804: 1.30s (média 1.76s) | +100 posts (total: 80400) | data: 2024-02-15
   r/Entrepreneur | req #0805: 1.71s (média 1.77s) | +100 posts (total: 80500) | data: 2024-02-16
+  r/Entrepreneur | req #0806: 1.72s (média 1.75s) | +100 posts (total: 80600) | data: 2024-02-16
+  r/Entrepreneur | req #0807: 1.70s (média 1.75s) | +100 posts (total: 80700) | data: 2024-02-17
+  r/Entrepreneur | req #0808: 2.59s (média 1.79s) | +100 posts (total: 80800) | data: 2024-02-17
+  r/Entrepreneur | req #0809: 1.53s (média 1.78s) | +100 posts (total: 80900) | data: 2024-02-18
