@@ -50,3 +50,63 @@ smallbusiness        566
 Business_Ideas       195
 empreendedorismo      18
 Name: count, dtype: int64
+ChatGPT.jsonl: lidos +1300 novos posts brutos (offset: 5,428,426 bytes)
+Entrepreneur.jsonl: lidos +63642 novos posts brutos (offset: 520,157,602 bytes)
+======================================================================
+[LOG DE FILTRAGEM - CRITÉRIOS E KEYWORDS APLICADOS]
+1. Escopo textual      : Concatenação de 'title' + 'selftext' (normalizados sem quebras de linha)
+2. Limpeza estrutural  : Exclusão de selftext vazio, '[removed]', '[deleted]', author == 'AutoModerator' e len(texto) < 300 chars
+3. Lógica booleana     : (Corresponde a >= 1 termo LLM) AND (Corresponde a >= 1 termo BIZ)
+4. Regex LLM (case-ins., exceto 'AI' estrito):
+   Padrão : chat\s?gpt|\bgpt|openai|claude|gemini|copilot|\bllm|(?-i:\bAI\b)
+   Termos : chat\s?gpt, \bgpt, openai, claude, gemini, copilot, \bllm, (?-i:\bAI\b)
+5. Regex BIZ (case-insensitive):
+   Padrão : business plan|startup|start-up|pricing|entrepreneur|my business|side hustle|go-to-market|market research|competitor|empreend|negócio
+   Termos : business plan, startup, start-up, pricing, entrepreneur, my business, side hustle, go-to-market, market research, competitor, empreend, negócio
+6. Funil desta rodada  : 64942 brutos -> 1075 aprovados
+   Top matches LLM     : {'ai': 2856, 'chatgpt': 273, 'gpt': 148, 'llm': 106, 'openai': 98, 'claude': 56, 'copilot': 20, 'chat gpt': 18}
+   Top matches BIZ     : {'startup': 1026, 'entrepreneur': 796, 'competitor': 209, 'pricing': 166, 'my business': 111, 'side hustle': 69, 'market research': 62, 'business plan': 40}
+======================================================================
+Traceback (most recent call last):
+  File "C:\Users\victo\Desktop\trabalho computacao social\filtro.py", line 143, in <module>
+    df_out.to_csv(OUT_CSV, mode="a", header=write_header, index=False, encoding="utf-8-sig")
+  File "C:\Users\victo\Desktop\trabalho computacao social\.venv\Lib\site-packages\pandas\core\generic.py", line 4026, in to_csv
+    return DataFrameRenderer(formatter).to_csv(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\victo\Desktop\trabalho computacao social\.venv\Lib\site-packages\pandas\io\formats\format.py", line 1027, in to_csv
+    csv_formatter.save()
+  File "C:\Users\victo\Desktop\trabalho computacao social\.venv\Lib\site-packages\pandas\io\formats\csvs.py", line 251, in save
+    with get_handle(
+         ^^^^^^^^^^^
+  File "C:\Users\victo\Desktop\trabalho computacao social\.venv\Lib\site-packages\pandas\io\common.py", line 945, in get_handle
+    handle = open(
+             ^^^^^
+PermissionError: [Errno 13] Permission denied: 'candidatos.csv'
+ChatGPT.jsonl: lidos +1800 novos posts brutos (offset: 7,287,830 bytes)
+Entrepreneur.jsonl: lidos +63642 novos posts brutos (offset: 520,157,602 bytes)
+======================================================================
+[LOG DE FILTRAGEM - CRITÉRIOS E KEYWORDS APLICADOS]
+1. Escopo textual      : Concatenação de 'title' + 'selftext' (normalizados sem quebras de linha)
+2. Limpeza estrutural  : Exclusão de selftext vazio, '[removed]', '[deleted]', author == 'AutoModerator' e len(texto) < 300 chars
+3. Lógica booleana     : (Corresponde a >= 1 termo LLM) AND (Corresponde a >= 1 termo BIZ)
+4. Regex LLM (case-ins., exceto 'AI' estrito):
+   Padrão : chat\s?gpt|\bgpt|openai|claude|gemini|copilot|\bllm|(?-i:\bAI\b)
+   Termos : chat\s?gpt, \bgpt, openai, claude, gemini, copilot, \bllm, (?-i:\bAI\b)
+5. Regex BIZ (case-insensitive):
+   Padrão : business plan|startup|start-up|pricing|entrepreneur|my business|side hustle|go-to-market|market research|competitor|empreend|negócio
+   Termos : business plan, startup, start-up, pricing, entrepreneur, my business, side hustle, go-to-market, market research, competitor, empreend, negócio
+6. Funil desta rodada  : 65442 brutos -> 1075 aprovados
+   Top matches LLM     : {'ai': 2856, 'chatgpt': 273, 'gpt': 148, 'llm': 106, 'openai': 98, 'claude': 56, 'copilot': 20, 'chat gpt': 18}
+   Top matches BIZ     : {'startup': 1026, 'entrepreneur': 796, 'competitor': 209, 'pricing': 166, 'my business': 111, 'side hustle': 69, 'market research': 62, 'business plan': 40}
+======================================================================
+
+Novos candidatos adicionados nesta rodada: 1075
+Total acumulado em candidatos.csv: 4352
+subreddit
+Entrepreneur        2299
+startups            1272
+smallbusiness        566
+Business_Ideas       195
+empreendedorismo      18
+ChatGPT                2
+Name: count, dtype: int64
