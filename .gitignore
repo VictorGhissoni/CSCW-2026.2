@@ -1,0 +1,6 @@
+*.csv
+*.parquet
+.venv/
+raw/Entrepreneur.jsonl
+raw/smallbusiness.jsonl
+raw/startups.jsonl
